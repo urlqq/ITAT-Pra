@@ -49,9 +49,9 @@ private:
     PWM motorLeft, motorRight;
     GPIO enable, brakeLeft, brakeRight, faultLeft, faultRight, faultCLR, dirLeft, dirRight, blueLED, redLED;
     ADC motorLeftCurrent, motorRightCurrent, battery;
-    char receiveWords[3] = {0x00, 0x00, 0x00};
     bool standby = false, updateFlag = false, measureStarted = false, enableStatus = false, status = false, sensor = true;
-    char transmitWords[13] = "ABCDEFGHIJ";
+    char receiveWords[CFG_BYTE_PER_MESSAGE_REC] = {0x00, 0x00, 0x00};
+    char transmitWords[CFG_BYTE_PER_MESSAGE_SENT] = "ABCDEFGHIJKL";
     float dutyLeft = 0.0f, dutyRight = 0.0f, minimal_distance = 255.0f, speed = 1.0f;
     uint8_t joyStickVert = 0, joyStickHori = 0, sensor_dir = 0, batteryCounter = 0, uartCounter = 0, timeOut = 0,distanceMid = 0, distanceCounter = 0;
     uint8_t lastDistances[5] = {255,255,255,255,255};

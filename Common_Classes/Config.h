@@ -15,6 +15,9 @@
 #define PI                              3.14159265358979f
 #define MINPULSE                        10                  // Minimum pulse used in triggering the ultrasound sensor
 
+// Use this define to enable and disable Mini Magni environment.
+#define ENV_MINI_MAGNI
+
 // Defines constants used in projects run on the magni itself (PWM_Class_Test, Magni_Class_Test, Distance_Class_Test)
 #ifdef MAGNI
 
@@ -56,7 +59,7 @@
 #define CFG_COM_FAULTCLR                5                   // position of Fault Clear in first UART byte
 #define CFG_BAUD_RATE                   38400               // BaudRate
 #define CFG_BYTE_PER_MESSAGE_REC        3
-#define CFG_BYTE_PER_MESSAGE_SENT       12
+#define CFG_BYTE_PER_MESSAGE_SENT       13
 
 // Motor
 

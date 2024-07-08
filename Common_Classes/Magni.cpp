@@ -353,7 +353,7 @@ void Magni::background()
 
         //TODO: Put your code here -> A7.1
 
-        communication.send(this->transmitWords,14);
+        communication.send(this->transmitWords,CFG_BYTE_PER_MESSAGE_SENT);
         if(communication.checkAvailability()){
             this->status = communication.receive(this->receiveWords,3);
         }

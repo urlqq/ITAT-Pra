@@ -270,7 +270,15 @@ void Remote::setTransmitValues()
     float RightSpeed = (this->wheel.getRightSpeed() * 100);
 
     // Only Updating Transmit 1-3 as 0 is syncword
+
+#ifdef ENV_MINI_MAGNI
+    this->transmit[0] |= (1 << 7); // Motor always enabled for development env
+#else
     this->transmit[0] |= (this->engineEnable << 7); // MSB = Engine Enable
+#endif
+
+
+
     wheel.calcValue();
 
 

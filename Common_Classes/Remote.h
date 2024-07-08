@@ -32,8 +32,8 @@ private:
     uint8_t joyCounter = 0;
     float joyMiddleX = 0, joyMiddleY = 0,joyOldValueX = 0, joyOldValueY = 0;
     int16_t pwm = 0;
-    char transmit[CFG_BYTE_PER_MESSAGE_SENT+1] = {0,0,0,0}; //before 0,1,2,3 -> 0000 0000b, 0000 0001b, 0000 0010b, 0000 0011b ->We keep the one in second byte as we only do Bit manipulations
-    char received[CFG_BYTE_PER_MESSAGE_REC] = {0,0,0,0,0,0,0,0,0,0,0,0};
+    char transmit[CFG_BYTE_PER_MESSAGE_SENT] = {0,0,0}; //before 0,1,2,3 -> 0000 0000b, 0000 0001b, 0000 0010b, 0000 0011b ->We keep the one in second byte as we only do Bit manipulations
+    char received[CFG_BYTE_PER_MESSAGE_REC] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
     uint8_t cursorPos = 2;
     bool engineEnable = false;
     uint8_t uartCounter = 0;
